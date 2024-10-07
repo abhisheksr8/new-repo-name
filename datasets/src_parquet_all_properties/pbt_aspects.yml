@@ -1,0 +1,339 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: c_short
+    type: short
+    nullable: true
+    metadata:
+      description: Represents a short integer value. It stores numerical values in
+        short data type, which can range from -32,768 to 32,767. This column is used
+        to store small integer values that do not require a large amount of memory.
+      mappings: []
+      tags: []
+  - name: c_int
+    type: integer
+    nullable: true
+    metadata:
+      description: Stores integer values for each record. This column is used to uniquely
+        identify each record and is of integer data type. It represents a unique identifier
+        for each record in the dataset.
+      mappings: []
+      tags: []
+  - name: c_long
+    type: long
+    nullable: true
+    metadata:
+      description: Stores long integer values representing a numerical quantity. This
+        column is of long data type and can be used to store large numerical values.
+        It is commonly used to represent quantities such as the number of items purchased
+        or the length of time a customer has been with a company.
+      mappings: []
+      tags: []
+  - name: c_decimal
+    type: decimal(10,0)
+    nullable: true
+    metadata:
+      description: Stores decimal values with a precision of 10 and scale of 0. It
+        represents a monetary value or any other numerical value that requires decimal
+        precision. The values in this column are of decimal data type and provide
+        accurate calculations for financial transactions or other numerical operations.
+      mappings: []
+      tags: []
+  - name: c_float
+    type: float
+    nullable: true
+    metadata:
+      description: Stores numerical values in floating point format. This column represents
+        a decimal number with a fractional component. The values in this column are
+        of float data type and can be used to represent a wide range of values with
+        high precision.
+      mappings: []
+      tags: []
+  - name: c_boolean
+    type: boolean
+    nullable: true
+    metadata:
+      description: Represents a binary value indicating the presence or absence of
+        a certain condition. It stores boolean values, which are either true or false.
+        This column can be used to filter or group data based on certain conditions.
+      mappings: []
+      tags: []
+  - name: c_double
+    type: double
+    nullable: true
+    metadata:
+      description: Stores numerical values in double data type. It represents a decimal
+        number with high precision and is used to store monetary values or other precise
+        measurements. The values in this column are of double data type and provide
+        a way to store and manipulate large decimal numbers with high precision.
+      mappings: []
+      tags: []
+  - name: c_string
+    type: string
+    nullable: true
+    metadata:
+      description: Stores textual data in string format. This column contains values
+        that are made up of characters and can be used to represent various types
+        of information such as names, addresses, and descriptions. The values in this
+        column are of string data type and can be used to uniquely identify each record.
+      mappings: []
+      tags: []
+  - name: c_date
+    type: date
+    nullable: true
+    metadata:
+      description: Represents a specific date in the format of YYYY-MM-DD. This column
+        stores values of date data type and is used to track the date of a particular
+        event or transaction. It provides a way to filter and group data based on
+        specific dates.
+      mappings: []
+      tags: []
+  - name: c_timestamp
+    type: timestamp
+    nullable: true
+    metadata:
+      description: Represents the date and time when a particular event occurred.
+        It stores the timestamp values in the dataset in a standard format. The values
+        in this column are of timestamp data type and provide a way to track the time
+        of events in the dataset.
+      mappings: []
+      tags: []
+  - name: c_array_int
+    type:
+      type: array
+      elementType: integer
+      containsNull: true
+    nullable: true
+    metadata:
+      description: This column stores an array of integer values for each record.
+        It represents a list of integers associated with a particular record. The
+        values in this column are of ArrayType data type, indicating that each record
+        can have multiple integer values associated with it.
+      mappings: []
+      tags: []
+  - name: c_array_string
+    type:
+      type: array
+      elementType: string
+      containsNull: true
+    nullable: true
+    metadata:
+      description: This column stores an array of strings for each record. It can
+        contain multiple string values for a single record, separated by commas. The
+        data type of this column is ArrayType < string >. It provides a way to store
+        and retrieve multiple string values for a single record.
+      mappings: []
+      tags: []
+  - name: c_array_long
+    type:
+      type: array
+      elementType: long
+      containsNull: true
+    nullable: true
+    metadata:
+      description: This column stores an array of long integer values. It represents
+        a collection of numerical values that are of long data type. The values in
+        this column can be used to perform various mathematical operations and statistical
+        analysis.
+      mappings: []
+      tags: []
+  - name: c_array_boolean
+    type:
+      type: array
+      elementType: boolean
+      containsNull: true
+    nullable: true
+    metadata:
+      description: Represents a list of boolean values for each record in the dataset.
+        This column stores an array of boolean values, where each value indicates
+        a specific property or attribute of the record. The values in this column
+        are of ArrayType data type, providing a way to store multiple boolean values
+        for each record in the dataset.
+      mappings: []
+      tags: []
+  - name: c_array_date
+    type:
+      type: array
+      elementType: date
+      containsNull: true
+    nullable: true
+    metadata:
+      description: This column stores an array of dates for each record. The values
+        in this column are of ArrayType data type, containing multiple date values.
+        It provides a way to store and retrieve multiple dates associated with a single
+        record.
+      mappings: []
+      tags: []
+  - name: c_array_timestamp
+    type:
+      type: array
+      elementType: timestamp
+      containsNull: true
+    nullable: true
+    metadata:
+      description: This column stores an array of timestamp values for each record.
+        It is of ArrayType data type and contains multiple timestamp values. These
+        values represent the time at which certain events occurred, such as when a
+        customer made a purchase or when an order was processed. The values in this
+        column can be used to analyze patterns in customer behavior over time.
+      mappings: []
+      tags: []
+  - name: c_array_float
+    type:
+      type: array
+      elementType: float
+      containsNull: true
+    nullable: true
+    metadata:
+      description: This column stores an array of floating point numbers for each
+        record. It is of ArrayType data type and contains multiple values for each
+        record. The values in this column represent numerical data with decimal points
+        and can be used for various statistical calculations.
+      mappings: []
+      tags: []
+  - name: c_array_decimal
+    type:
+      type: array
+      elementType: decimal(15,2)
+      containsNull: true
+    nullable: true
+    metadata:
+      description: Represents an array of decimal values with a precision of 15 and
+        scale of 2. This column stores a collection of monetary values in decimal
+        data type, indicating the monetary value of purchases made by individual customers.
+        The values in this column are stored as an array of decimal values, providing
+        a way to store multiple monetary values for each customer.
+      mappings: []
+      tags: []
+  - name: c_struct
+    type:
+      type: struct
+      fields:
+      - name: c_short
+        type: short
+        nullable: true
+        metadata:
+          description: Represents a short integer value that is a part of a structured
+            data type. This column is a part of a StructType data type and stores
+            numerical values in short data type. It is used to represent a small range
+            of integer values and is often used in combination with other data types
+            to create complex data structures.
+          mappings: []
+          tags: []
+      - name: c_int
+        type: integer
+        nullable: true
+        metadata:
+          description: Represents an integer value stored within a nested structure
+            called 'c_struct'. This column is a part of a larger data structure and
+            stores integer values. It is used to provide additional information about
+            the main data and is of integer data type.
+          mappings: []
+          tags: []
+      - name: c_long
+        type: long
+        nullable: true
+        metadata:
+          description: Represents a long integer value stored within a nested structure.
+            This column is a part of a StructType data structure and stores a long
+            integer value. The values in this column are of long data type and can
+            be used to represent large numerical values.
+          mappings: []
+          tags: []
+      - name: c_decimal
+        type: decimal(22,3)
+        nullable: true
+        metadata:
+          description: This column is a part of a nested structure and represents
+            a decimal value with precision of 22 and scale of 3. It is a part of a
+            StructType data type and is used to store complex data structures. The
+            values in this column are used to represent monetary values or other numerical
+            data with high precision requirements.
+          mappings: []
+          tags: []
+      - name: c_float
+        type: float
+        nullable: true
+        metadata:
+          description: This column is a part of a nested structure and represents
+            a floating point value stored in the 'c_float' field of the 'c_struct'
+            structure. The values in this column are of double data type and represent
+            a decimal number with a high degree of precision. This column is useful
+            for storing and analyzing complex data structures.
+          mappings: []
+          tags: []
+      - name: c_boolean
+        type: boolean
+        nullable: true
+        metadata:
+          description: Represents a boolean value within a nested structure. This
+            column is a part of a StructType data type and stores a boolean value.
+            It provides additional information about a customer's preferences or characteristics.
+          mappings: []
+          tags: []
+      - name: c_double
+        type: double
+        nullable: true
+        metadata:
+          description: Represents a double precision floating point number stored
+            within a nested structure. This column is a part of a StructType data
+            type and stores numerical values in double data type. It provides a way
+            to store complex data structures within a single column.
+          mappings: []
+          tags: []
+      - name: c_string
+        type: string
+        nullable: true
+        metadata:
+          description: Represents a string value stored within a nested structure.
+            This column is a part of a StructType data type and stores a string value
+            within it. The values in this column are of string data type and provide
+            additional information about the nested structure.
+          mappings: []
+          tags: []
+      - name: c_date
+        type: date
+        nullable: true
+        metadata:
+          description: Represents the date value of a nested struct column named 'c_struct'.
+            This column stores the date value in the 'c_date' field of the nested
+            struct. The values in this column are of date data type and provide information
+            about a specific date related to the data in the 'c_struct' column.
+          mappings: []
+          tags: []
+      - name: c_timestamp
+        type: timestamp
+        nullable: true
+        metadata:
+          description: Represents the timestamp value of a specific event related
+            to a structured data type. This column is a part of a StructType data
+            type and stores the timestamp value of a particular event. The values
+            in this column are of timestamp data type and provide information about
+            the time at which the event occurred.
+          mappings: []
+          tags: []
+      - name: c_array_int
+        type:
+          type: array
+          elementType: integer
+          containsNull: true
+        nullable: true
+        metadata:
+          description: This column is a part of a nested structure and stores an array
+            of integer values. It is a subfield of the 'c_struct' field and represents
+            a list of integers associated with each record. The values in this column
+            are of ArrayType data type and can contain multiple integer values for
+            each record.
+          mappings: []
+          tags: []
+    nullable: true
+    metadata:
+      description: This column represents a complex data type that stores a structured
+        set of values. It contains a combination of different data types such as short,
+        integer, long, decimal, float, boolean, double, string, date, timestamp, and
+        array types. The values in this column are organized in a nested structure,
+        with each field having its own data type and name. This column provides a
+        way to store and retrieve complex data structures in a tabular format.
+      mappings: []
+      tags: []

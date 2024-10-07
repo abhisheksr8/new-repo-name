@@ -1,0 +1,14 @@
+version: 1
+pipelineVersion:
+  version: '2'
+configurations:
+- test-random3
+- asdsad
+- test-random2
+- default
+- test_instance_9
+- test_instance_8
+- test_all_instancevalues
+- test-random11
+- test_instance_10
+- test-common-with-another

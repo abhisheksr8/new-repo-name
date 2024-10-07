@@ -1,0 +1,1 @@
+{"initCode":"d=10","code":"def squared_numbers(number):\n    print('hello')\n    return (number*number)/d"}

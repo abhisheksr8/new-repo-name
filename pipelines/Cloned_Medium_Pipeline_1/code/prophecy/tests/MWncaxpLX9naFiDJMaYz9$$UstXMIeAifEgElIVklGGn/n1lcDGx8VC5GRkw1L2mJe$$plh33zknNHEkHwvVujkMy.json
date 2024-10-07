@@ -1,0 +1,214 @@
+{
+  "unitTests" : [ {
+    "data" : {
+      "4sx2z_UUwW6Y48JZTH6WB$$sGeqz8HRG0nZdRspHfgOB" : {
+        "values" : [ [ "1", "Griz", "Roubeix", "761-351-2493", "groubeix0@yellowpages.com", "RU", "2019-07-20", "E", "true" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "customer_id",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "first_name",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "last_name",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "phone",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "email",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "country_code",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "account_open_date",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "account_flags",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_expressions",
+            "type" : "boolean",
+            "nullable" : false,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "p2tUU-Bo7GhHhOOQ6d6Jm$$AKpTEeWzYlokeSGy12b4X" : {
+        "values" : [ [ "1.0" ], [ "7" ], [ "{2020-08-01 12:18:15, 2020-08-01 12:20:45}" ], [ "{2020-08-01 12:35:15, 2020-08-01 12:37:45}" ], [ "3" ], [ "15.0" ], [ "{2020-08-01 12:24:15, 2020-08-01 12:26:45}" ], [ "A2" ], [ "0" ], [ "{2020-08-01 12:21:45, 2020-08-01 12:24:15}" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "c1",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "2vrpj24FxoLGDEYCVRT3u$$w3vA3m1xHwi6jVbCq2J0X" : {
+        "values" : [ [ "1", "Griz", "Roubeix", "761-351-2493", "groubeix0@yellowpages.com", "RU", "2019-07-20", "E", "true", "1.0" ], [ "1", "Griz", "Roubeix", "761-351-2493", "groubeix0@yellowpages.com", "RU", "2019-07-20", "E", "true", "7" ], [ "1", "Griz", "Roubeix", "761-351-2493", "groubeix0@yellowpages.com", "RU", "2019-07-20", "E", "true", "{2020-08-01 12:18:15, 2020-08-01 12:20:45}" ], [ "1", "Griz", "Roubeix", "761-351-2493", "groubeix0@yellowpages.com", "RU", "2019-07-20", "E", "true", "{2020-08-01 12:35:15, 2020-08-01 12:37:45}" ], [ "1", "Griz", "Roubeix", "761-351-2493", "groubeix0@yellowpages.com", "RU", "2019-07-20", "E", "true", "3" ], [ "1", "Griz", "Roubeix", "761-351-2493", "groubeix0@yellowpages.com", "RU", "2019-07-20", "E", "true", "15.0" ], [ "1", "Griz", "Roubeix", "761-351-2493", "groubeix0@yellowpages.com", "RU", "2019-07-20", "E", "true", "{2020-08-01 12:24:15, 2020-08-01 12:26:45}" ], [ "1", "Griz", "Roubeix", "761-351-2493", "groubeix0@yellowpages.com", "RU", "2019-07-20", "E", "true", "A2" ], [ "1", "Griz", "Roubeix", "761-351-2493", "groubeix0@yellowpages.com", "RU", "2019-07-20", "E", "true", "0" ], [ "1", "Griz", "Roubeix", "761-351-2493", "groubeix0@yellowpages.com", "RU", "2019-07-20", "E", "true", "{2020-08-01 12:21:45, 2020-08-01 12:24:15}" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "customer_id",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "first_name",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "last_name",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "phone",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "email",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "country_code",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "account_open_date",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "account_flags",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_expressions",
+            "type" : "boolean",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c1",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      }
+    },
+    "name" : "Unit Test ",
+    "testType" : "outputRow",
+    "language" : "scala"
+  } ],
+  "language" : "scala"
+}

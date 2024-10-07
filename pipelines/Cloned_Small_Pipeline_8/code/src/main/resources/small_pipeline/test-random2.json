@@ -1,0 +1,21 @@
+{
+  "c_array" : [ "asdasd" ],
+  "c_record3" : { },
+  "subgraph_reformat_5" : {
+    "c_record3" : { },
+    "Subgraph_2" : {
+      "c_record3" : { }
+    }
+  },
+  "c_test" : "asdasd",
+  "reformatted_columns_1" : {
+    "c_record3" : { }
+  },
+  "bool" : true,
+  "Subgraph_4" : {
+    "c_record3" : { },
+    "Subgraph_5" : {
+      "c_record3" : { }
+    }
+  }
+}

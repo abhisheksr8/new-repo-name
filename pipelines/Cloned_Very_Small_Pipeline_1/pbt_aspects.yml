@@ -1,0 +1,8 @@
+version: 1
+pipelineVersion:
+  version: '2'
+configurations:
+- asdsad
+- test-common-with-another
+- test_all_instancevalues
+- default

@@ -1,0 +1,60 @@
+{
+  "c_array" : [ "test fixed", "dfdsf" ],
+  "c_record3" : {
+    "c_val3" : {
+      "crr" : "erwertertds"
+    }
+  },
+  "subgraph_reformat_5" : {
+    "c_array" : [ "test fixed", "dfdsf" ],
+    "c_record3" : {
+      "c_val3" : {
+        "crr" : "erwertertds"
+      }
+    },
+    "Subgraph_2" : {
+      "c_record3" : {
+        "c_val3" : {
+          "crr" : "erwertertds"
+        }
+      },
+      "bool" : true,
+      "c_array" : [ "test fixed", "dfdsf" ],
+      "c_test" : "   "
+    },
+    "c_test" : "   ",
+    "bool" : true
+  },
+  "c_test" : "asdas qwe asd asd asd asd   ",
+  "reformatted_columns_1" : {
+    "c_record3" : {
+      "c_val3" : {
+        "crr" : "erwertertds"
+      }
+    },
+    "bool" : true,
+    "c_array" : [ "test fixed", "dfdsf" ],
+    "c_test" : "   "
+  },
+  "bool" : true,
+  "Subgraph_4" : {
+    "c_array" : [ "test fixed", "dfdsf" ],
+    "c_record3" : {
+      "c_val3" : {
+        "crr" : "erwertertds"
+      }
+    },
+    "c_test" : "   ",
+    "bool" : true,
+    "Subgraph_5" : {
+      "c_record3" : {
+        "c_val3" : {
+          "crr" : "erwertertds"
+        }
+      },
+      "bool" : true,
+      "c_array" : [ "test fixed", "dfdsf" ],
+      "c_test" : "asdasd"
+    }
+  }
+}

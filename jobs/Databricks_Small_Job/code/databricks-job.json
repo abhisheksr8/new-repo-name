@@ -1,0 +1,169 @@
+{
+  "fabric_id" : "33",
+  "components" : [ {
+    "PipelineComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/performance/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Small_Pipeline.jar",
+      "nodeName" : "EM_IO",
+      "id" : "fEdKhr0WS9J0yFHRlTkcx$$ylOQay990DQCqNCqeI66x",
+      "language" : "scala",
+      "pipelineId" : "pipelines/Small_Pipeline"
+    }
+  }, {
+    "PipelineComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/performance/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Very_Small_Pipeline.jar",
+      "nodeName" : "Sanity_Pipeline_3_1",
+      "id" : "k3N62CHbKB7_s1A0HytDs$$UepAisqv308uqFWzqmQUq",
+      "language" : "scala",
+      "pipelineId" : "pipelines/Very_Small_Pipeline"
+    }
+  }, {
+    "PipelineComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/performance/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Small_Pipeline.jar",
+      "nodeName" : "EMDisabled",
+      "id" : "1tep3kD734Xd7PWE8Td-w",
+      "language" : "scala",
+      "pipelineId" : "pipelines/Small_Pipeline"
+    }
+  }, {
+    "ScriptComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/performance/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/Databricks_Small_Job/Script_3--342935073.py",
+      "nodeName" : "Script_3",
+      "id" : "8OOdxFZAmu1pkp0uBHaBP",
+      "language" : "python",
+      "content" : "print(\"hello\")"
+    }
+  } ],
+  "request" : {
+    "format" : "MULTI_TASK",
+    "name" : "Databricks_Small_Job",
+    "job_clusters" : [ {
+      "job_cluster_key" : "Databricks_Small_Job_default_small",
+      "new_cluster" : {
+        "spark_version" : "13.3.x-scala2.12",
+        "node_type_id" : "i3.xlarge",
+        "num_workers" : 0,
+        "custom_tags" : {
+          "ResourceClass" : "SingleNode"
+        },
+        "enable_elastic_disk" : false,
+        "spark_conf" : {
+          "spark.databricks.cluster.profile" : "singleNode",
+          "spark.master" : "local[*, 4]",
+          "spark.prophecy.metadata.fabric.id" : "33",
+          "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/Databricks_Small_Job",
+          "spark.prophecy.metadata.is.interactive.run" : "false",
+          "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
+          "spark.prophecy.metadata.user.id" : "12",
+          "spark.prophecy.tasks" : "H4sIAAAAAAAAAKtWcvWN9/RXslIqyCxIzcnMSy3WD85NzMmJD4DylXSASlwyixOTclJT8KsLTszLLKmEi8QbxxuiaAhLLaqMR9NVCwB5xDlOggAAAA==",
+          "spark.prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
+          "spark.prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "spark.prophecy.execution.metrics.disabled" : "true",
+          "spark.prophecy.execution.service.url" : "wss://performance.cloud.prophecy.io/execution/eventws",
+          "spark.databricks.isv.product" : "prophecy"
+        },
+        "spark_env_vars" : {
+          "PYSPARK_PYTHON" : "/databricks/python3/bin/python3"
+        },
+        "runtime_engine" : "STANDARD",
+        "aws_attributes" : {
+          "first_on_demand" : 1,
+          "availability" : "SPOT_WITH_FALLBACK",
+          "zone_id" : "auto",
+          "spot_bid_price_percent" : 100
+        },
+        "data_security_mode" : "SINGLE_USER"
+      }
+    } ],
+    "email_notifications" : {
+      "on_success" : [ "abhisheks@prophecy.io", "abhisheks@simpledatalabs.com" ]
+    },
+    "tasks" : [ {
+      "task_key" : "EM_IO",
+      "job_cluster_key" : "Databricks_Small_Job_default_small",
+      "spark_jar_task" : {
+        "main_class_name" : "io.prophecy.pipelines.small_pipeline.Main",
+        "parameters" : [ "-i", "default", "-O", "{}" ]
+      },
+      "libraries" : [ {
+        "maven" : {
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.4.0-8.3.0-SNAPSHOT",
+          "repo" : "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+        }
+      }, {
+        "jar" : "dbfs:/FileStore/prophecy/artifacts/performance/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Small_Pipeline.jar"
+      }, {
+        "maven" : {
+          "coordinates" : "mysql:mysql-connector-java:8.0.29",
+          "exclusions" : [ ]
+        }
+      } ],
+      "email_notifications" : { }
+    }, {
+      "task_key" : "Sanity_Pipeline_3_1",
+      "job_cluster_key" : "Databricks_Small_Job_default_small",
+      "spark_jar_task" : {
+        "main_class_name" : "io.prophecy.pipelines.very_small_pipeline.Main",
+        "parameters" : [ "-i", "default", "-O", "{}" ]
+      },
+      "libraries" : [ {
+        "maven" : {
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.4.0-8.3.0-SNAPSHOT",
+          "repo" : "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+        }
+      }, {
+        "jar" : "dbfs:/FileStore/prophecy/artifacts/performance/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Very_Small_Pipeline.jar"
+      }, {
+        "maven" : {
+          "coordinates" : "mysql:mysql-connector-java:8.0.29",
+          "exclusions" : [ ]
+        }
+      } ],
+      "email_notifications" : { }
+    }, {
+      "task_key" : "EMDisabled",
+      "depends_on" : [ {
+        "task_key" : "Sanity_Pipeline_3_1"
+      } ],
+      "job_cluster_key" : "Databricks_Small_Job_default_small",
+      "spark_jar_task" : {
+        "main_class_name" : "io.prophecy.pipelines.small_pipeline.Main",
+        "parameters" : [ "-i", "default", "-O", "{}" ]
+      },
+      "libraries" : [ {
+        "maven" : {
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.4.0-8.3.0-SNAPSHOT",
+          "repo" : "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+        }
+      }, {
+        "jar" : "dbfs:/FileStore/prophecy/artifacts/performance/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Small_Pipeline.jar"
+      }, {
+        "maven" : {
+          "coordinates" : "mysql:mysql-connector-java:8.0.29",
+          "exclusions" : [ ]
+        }
+      } ],
+      "email_notifications" : { }
+    }, {
+      "task_key" : "Script_3",
+      "depends_on" : [ {
+        "task_key" : "EM_IO"
+      } ],
+      "job_cluster_key" : "Databricks_Small_Job_default_small",
+      "spark_python_task" : {
+        "python_file" : "dbfs:/FileStore/prophecy/artifacts/performance/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/Databricks_Small_Job/Script_3--342935073.py"
+      },
+      "email_notifications" : { }
+    } ],
+    "schedule" : {
+      "quartz_cron_expression" : "0 0 0 ? * 1 *",
+      "timezone_id" : "GMT",
+      "pause_status" : "UNPAUSED"
+    },
+    "access_control_list" : [ ]
+  },
+  "cluster_mode" : {
+    "clusterMode" : "Single"
+  },
+  "secret_scope" : "prophecy_jobs_17",
+  "sorted_processes" : [ "fEdKhr0WS9J0yFHRlTkcx$$ylOQay990DQCqNCqeI66x", "k3N62CHbKB7_s1A0HytDs$$UepAisqv308uqFWzqmQUq", "1tep3kD734Xd7PWE8Td-w", "8OOdxFZAmu1pkp0uBHaBP" ]
+}

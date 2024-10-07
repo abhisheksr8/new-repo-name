@@ -1,0 +1,18 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: file
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: mtime
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []

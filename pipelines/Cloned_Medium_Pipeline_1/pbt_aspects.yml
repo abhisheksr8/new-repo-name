@@ -1,0 +1,33 @@
+version: 1
+pipelineVersion:
+  version: '2'
+configurations:
+- test-random16
+- test-random3
+- test-random20
+- test-random12
+- test-random23
+- asdsad
+- test-random19
+- test-random27
+- test-random15
+- test-random18
+- test-random24
+- test-random29
+- test-random13
+- test-random26
+- test-random22
+- test-random14
+- test-random2
+- default
+- test_instance_9
+- test-random25
+- test-random21
+- test-random17
+- test-random30
+- test_instance_8
+- test_all_instancevalues
+- test-random11
+- test_instance_10
+- test-random28
+- test-common-with-another

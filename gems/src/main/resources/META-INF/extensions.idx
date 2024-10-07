@@ -1,0 +1,13 @@
+abhishekse2etestspropheco_team.scalaproject.gems.NewDedup
+abhishekse2etestsprophecy.io_team.scalaproject.gems.csv
+io.prophecy.scalagems.transform.CustomDeduplicate
+abhishekse2etestsprophecy.io_team.scalaproject.gems.Reformat
+abhishekse2etestsprophecoteam.scala_project.gems.NewDedup
+abhishekse2etestsprophecy.io_team.scalaproject.gems.Filter
+abhishekse2etestspropheco_team.scalaproject.gems.Limit
+abhishekse2etestsprophecy.io_team.scalaproject.gems.Join
+abhishekse2etestspropheco_team.scalaproject.gems.Reformat
+abhishekse2etestsprophecy.io_team.scalaproject.gems.SchemaTransform
+io.prophecy.scalagems.dataset.CustomCatalogTable
+abhishekse2etestsprophecy.io_team.scalaproject.gems.Repartition
+abhishekse2etestspropheco_team.scalaproject.gems.DepCSV

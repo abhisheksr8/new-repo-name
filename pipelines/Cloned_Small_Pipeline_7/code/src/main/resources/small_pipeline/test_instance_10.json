@@ -1,0 +1,14 @@
+{
+  "c_test" : "random",
+  "c_array" : [ "asdasd", "asdasdasd", "asdasd3123", "423423asdasd" ],
+  "bool" : false,
+  "double" : 324324,
+  "reformatted_columns_1" : {
+    "c_test" : "asdasdasd",
+    "c_record3" : {
+      "c_val3" : {
+        "crr" : "asdasdads"
+      }
+    }
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "unitTests" : [ {
+    "data" : {
+      "4isDTqbPvgw7l3zTlOzst$$92qROIe0zDa9rTegIUdYh" : {
+        "values" : [ [ "0", "asdsa352", "true", "2018-04-13", "2018-02-14T09:09:01.000Z", "56.0", "891.73", "352", "2018-02-14T09:09:01.000Z", "18", "89255.467", "`c- short``c -  boolean _  `" ], [ "0", "asdsd1120", "true", "2016-04-21", "2016-02-22T07:17:13.000Z", "35.636364", "567.47", "224", "2016-02-22T07:17:13.000Z", "21", "56798.933", "`c- short``c -  boolean _  `" ], [ "3", "23432asda690", "false", "1999-09-14", "1999-07-15T10:10:26.000Z", "43.909092", "699.2", "276", "1999-07-15T10:10:26.000Z", "34", "69984.4", "`c- short``c -  boolean _  `" ], [ "3", "asdsa132", "false", "1993-05-18", "1993-03-19T04:14:34.000Z", "72.6", "334.4", "132", "1993-03-19T04:14:34.000Z", "33", "33470.8", "`c- short``c -  boolean _  `" ], [ "0", "23432asda440", "true", "2004-08-09", "2004-06-10T05:05:01.000Z", "96.8", "445.87", "176", "2004-06-10T05:05:01.000Z", "9", "44627.733", "`c- short``c -  boolean _  `" ], [ "4", "23432asda580", "false", "2018-06-23", "2018-04-24T09:19:15.000Z", "36.909092", "587.73", "232", "2018-04-24T09:19:15.000Z", "23", "58827.467", "`c- short``c -  boolean _  `" ], [ "1", "23432asda510", "false", "2011-07-16", "2011-05-17T02:12:08.000Z", "32.454544", "516.8", "204", "2011-05-17T02:12:08.000Z", "16", "51727.6", "`c- short``c -  boolean _  `" ], [ "1", "asdsa124", "false", "1991-11-16", "1991-09-17T02:12:32.000Z", "68.2", "314.13", "124", "1991-09-17T02:12:32.000Z", "31", "31442.267", "`c- short``c -  boolean _  `" ], [ "1", "asdsd1900", "false", "1995-11-20", "1995-09-21T06:16:08.000Z", "60.454544", "962.67", "380", "1995-09-21T06:16:08.000Z", "25", "96355.333", "`c- short``c -  boolean _  `" ], [ "5", "asdsd820", "false", "2001-05-06", "2001-03-07T02:02:42.000Z", "90.2", "415.47", "164", "2001-03-07T02:02:42.000Z", "6", "41584.933", "`c- short``c -  boolean _  `" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "c_array_int",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_array_string",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_array_boolean",
+            "type" : "boolean",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_array_date",
+            "type" : "date",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_array_timestamp",
+            "type" : "timestamp",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_array_float",
+            "type" : "float",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_array_decimal",
+            "type" : "decimal(15,2)",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_struct-c_array_int",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_struct-c_timestamp",
+            "type" : "timestamp",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_struct-c_short",
+            "type" : "short",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_struct-c_decimal",
+            "type" : "decimal(22,3)",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_config",
+            "type" : "string",
+            "nullable" : false,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "nOHEALxkYXZlzMlbiGGX-$$_hwkxDtkbQ7lKcKLAlwwl" : {
+        "values" : [ [ "0", "asdsa352", "true", "2018-04-13", "2018-02-14T09:09:01", "56.0", "891.73", "352", "2018-02-14T09:09:01", "18", "89255.467", "`c- short``c -  boolean _  `", "1889255.467" ], [ "0", "asdsd1120", "true", "2016-04-21", "2016-02-22T07:17:13", "35.636364", "567.47", "224", "2016-02-22T07:17:13", "21", "56798.933", "`c- short``c -  boolean _  `", "2156798.933" ], [ "3", "23432asda690", "false", "1999-09-14", "1999-07-15T10:10:26", "43.909092", "699.20", "276", "1999-07-15T10:10:26", "34", "69984.400", "`c- short``c -  boolean _  `", "3469984.400" ], [ "3", "asdsa132", "false", "1993-05-18", "1993-03-19T04:14:34", "72.6", "334.40", "132", "1993-03-19T04:14:34", "33", "33470.800", "`c- short``c -  boolean _  `", "3333470.800" ], [ "0", "23432asda440", "true", "2004-08-09", "2004-06-10T05:05:01", "96.8", "445.87", "176", "2004-06-10T05:05:01", "9", "44627.733", "`c- short``c -  boolean _  `", "944627.733" ], [ "4", "23432asda580", "false", "2018-06-23", "2018-04-24T09:19:15", "36.909092", "587.73", "232", "2018-04-24T09:19:15", "23", "58827.467", "`c- short``c -  boolean _  `", "2358827.467" ], [ "1", "23432asda510", "false", "2011-07-16", "2011-05-17T02:12:08", "32.454544", "516.80", "204", "2011-05-17T02:12:08", "16", "51727.600", "`c- short``c -  boolean _  `", "1651727.600" ], [ "1", "asdsa124", "false", "1991-11-16", "1991-09-17T02:12:32", "68.2", "314.13", "124", "1991-09-17T02:12:32", "31", "31442.267", "`c- short``c -  boolean _  `", "3131442.267" ], [ "1", "asdsd1900", "false", "1995-11-20", "1995-09-21T06:16:08", "60.454544", "962.67", "380", "1995-09-21T06:16:08", "25", "96355.333", "`c- short``c -  boolean _  `", "2596355.333" ], [ "5", "asdsd820", "false", "2001-05-06", "2001-03-07T02:02:42", "90.2", "415.47", "164", "2001-03-07T02:02:42", "6", "41584.933", "`c- short``c -  boolean _  `", "641584.933" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "c_array_int",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_array_string",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_array_boolean_renamed",
+            "type" : "boolean",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_array_date",
+            "type" : "date",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_array_timestamp",
+            "type" : "timestamp",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_array_float",
+            "type" : "float",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_array_decimal",
+            "type" : "decimal(15,2)",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_struct-c_array_int",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_struct-c_timestamp",
+            "type" : "timestamp",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_struct-c_short",
+            "type" : "short",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_struct-c_decimal",
+            "type" : "decimal(22,3)",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_config",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_concat_new_short_decimal",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      }
+    },
+    "name" : "Unit Test ",
+    "testType" : "outputRow",
+    "language" : "scala"
+  } ],
+  "language" : "scala"
+}

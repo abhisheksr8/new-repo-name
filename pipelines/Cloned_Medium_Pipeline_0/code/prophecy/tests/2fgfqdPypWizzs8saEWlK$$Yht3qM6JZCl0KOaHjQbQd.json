@@ -1,0 +1,61 @@
+{
+  "unitTests" : [ {
+    "data" : {
+      "AqoenoAiTyG7d_7PSEvH5$$OPT3F3HK5WKeHEzYBIMvs" : {
+        "values" : [ [ "Cassy" ], [ "Robers" ], [ "Sibley" ], [ "Natka" ], [ "Jonis" ], [ "Adaline" ], [ "Jeromy" ], [ "Violet" ], [ "Dallas" ], [ "Goldina" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "c_string_new",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "WjB3Bj0SD_MN9ap4O9Hof$$mykPpj3gu2BUOPt0War41" : {
+        "values" : [ [ "Cassy" ], [ "Robers" ], [ "Sibley" ], [ "Natka" ], [ "Jonis" ], [ "Adaline" ], [ "Jeromy" ], [ "Violet" ], [ "Dallas" ], [ "Goldina" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "c_string_new",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "-5kbFncFwViqg2FraiuyN$$V7wm5S50bucry7hZLV2Ys" : {
+        "values" : [ [ "Cassy" ], [ "Robers" ], [ "Sibley" ], [ "Natka" ], [ "Jonis" ], [ "Adaline" ], [ "Jeromy" ], [ "Violet" ], [ "Dallas" ], [ "Goldina" ], [ "Cassy" ], [ "Robers" ], [ "Sibley" ], [ "Natka" ], [ "Jonis" ], [ "Adaline" ], [ "Jeromy" ], [ "Violet" ], [ "Dallas" ], [ "Goldina" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "c_string_new",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      }
+    },
+    "name" : "Unit Test ",
+    "testType" : "outputRow",
+    "language" : "scala"
+  } ],
+  "language" : "scala"
+}

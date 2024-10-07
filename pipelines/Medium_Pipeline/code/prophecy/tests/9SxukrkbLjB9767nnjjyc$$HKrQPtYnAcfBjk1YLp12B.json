@@ -1,0 +1,224 @@
+{
+  "unitTests" : [ {
+    "data" : {
+      "E_E0hDhiQp4ILXF74PEpe$$Rkp-adYCwZ273LLSifo95" : {
+        "values" : [ [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "c   short  --",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c-int-column type",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "-- c-long",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c-decimal",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c  float",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c--boolean",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c- - -double",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c___-- string",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c  date",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_timestamp",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "q2OHFdKSlaApfiB-p2kod$$gjcVI8oVJu6r8jvarb7gm" : {
+        "values" : [ [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "ab", "true" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "ab", "true" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "ab", "true" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "ab", "true" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "ab", "true" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "ab", "true" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "ab", "true" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "ab", "true" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "ab", "true" ], [ "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "ab", "true" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "c   short  --",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c-int-column type",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "-- c-long",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c-decimal",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c  float",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c--boolean",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c- - -double",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c___-- string",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c  date",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_timestamp",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_lookup_1",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c_contains_starts_ends",
+            "type" : "boolean",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      }
+    },
+    "name" : "Unit Test ",
+    "testType" : "outputRow",
+    "language" : "scala"
+  } ],
+  "language" : "scala"
+}

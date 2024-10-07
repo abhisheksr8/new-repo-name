@@ -1,0 +1,80 @@
+{
+  "unitTests" : [ {
+    "data" : {
+      "qoL3ya9e3tN4p8_XHU1ag$$leU0gpvcT4Vcr31FOVS5K" : {
+        "values" : [ [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "c   short  --",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c-int-column type",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c--boolean",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "2Y0tLZqOioaqEIJphm3N5$$b9uhCqED2owJs3Gx-KEa2" : {
+        "values" : [ [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ], [ "null", "null", "null" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "c   short  --",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c-int-column type",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "c--boolean",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      }
+    },
+    "name" : "Unit Test ",
+    "testType" : "outputRow",
+    "language" : "scala"
+  } ],
+  "language" : "scala"
+}

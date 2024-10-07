@@ -1,0 +1,243 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: c_short
+    type: short
+    nullable: true
+    metadata:
+      description: Short integer value
+      mappings: []
+      tags: []
+  - name: c_int
+    type: integer
+    nullable: true
+    metadata:
+      description: Integer value
+      mappings: []
+      tags: []
+  - name: c_long
+    type: long
+    nullable: true
+    metadata:
+      description: Long integer value
+      mappings: []
+      tags: []
+  - name: c_decimal
+    type: decimal(10,0)
+    nullable: true
+    metadata:
+      description: Decimal value with precision 10 and scale 0
+      mappings: []
+      tags: []
+  - name: c_float
+    type: float
+    nullable: true
+    metadata:
+      description: Floating-point value
+      mappings: []
+      tags: []
+  - name: c_boolean
+    type: boolean
+    nullable: true
+    metadata:
+      description: Boolean value
+      mappings: []
+      tags: []
+  - name: c_double
+    type: double
+    nullable: true
+    metadata:
+      description: A double-precision floating-point number
+      mappings: []
+      tags: []
+  - name: c_string
+    type: string
+    nullable: true
+    metadata:
+      description: A string value
+      mappings: []
+      tags: []
+  - name: c_date
+    type: date
+    nullable: true
+    metadata:
+      description: A date value
+      mappings: []
+      tags: []
+  - name: c_timestamp
+    type: timestamp
+    nullable: true
+    metadata:
+      description: Timestamp value representing a specific point in time
+      mappings: []
+      tags: []
+  - name: c_array_int
+    type:
+      type: array
+      elementType: integer
+      containsNull: true
+    nullable: true
+    metadata:
+      description: Array of integer values
+      mappings: []
+      tags: []
+  - name: c_array_string
+    type:
+      type: array
+      elementType: string
+      containsNull: true
+    nullable: true
+    metadata:
+      description: Array of string values
+      mappings: []
+      tags: []
+  - name: c_array_long
+    type:
+      type: array
+      elementType: long
+      containsNull: true
+    nullable: true
+    metadata:
+      description: An array of long integer values
+      mappings: []
+      tags: []
+  - name: c_array_boolean
+    type:
+      type: array
+      elementType: boolean
+      containsNull: true
+    nullable: true
+    metadata:
+      description: An array of boolean values
+      mappings: []
+      tags: []
+  - name: c_array_date
+    type:
+      type: array
+      elementType: date
+      containsNull: true
+    nullable: true
+    metadata:
+      description: An array of date values
+      mappings: []
+      tags: []
+  - name: c_array_timestamp
+    type:
+      type: array
+      elementType: timestamp
+      containsNull: true
+    nullable: true
+    metadata:
+      description: An array of timestamp values
+      mappings: []
+      tags: []
+  - name: c_array_float
+    type:
+      type: array
+      elementType: float
+      containsNull: true
+    nullable: true
+    metadata:
+      description: An array of float values
+      mappings: []
+      tags: []
+  - name: c_array_decimal
+    type:
+      type: array
+      elementType: decimal(15,2)
+      containsNull: true
+    nullable: true
+    metadata:
+      description: An array of decimal values with precision 15 and scale 2
+      mappings: []
+      tags: []
+  - name: c_struct
+    type:
+      type: struct
+      fields:
+      - name: c_short
+        type: short
+        nullable: true
+        metadata:
+          description: A short integer field within the nested structure
+          mappings: []
+          tags: []
+      - name: c_int
+        type: integer
+        nullable: true
+        metadata:
+          description: An integer field within the nested structure
+          mappings: []
+          tags: []
+      - name: c_long
+        type: long
+        nullable: true
+        metadata:
+          description: Long value within the nested struct column
+          mappings: []
+          tags: []
+      - name: c_decimal
+        type: decimal(22,3)
+        nullable: true
+        metadata:
+          description: Decimal value within the nested struct column
+          mappings: []
+          tags: []
+      - name: c_float
+        type: float
+        nullable: true
+        metadata:
+          description: Float value within the nested struct column
+          mappings: []
+          tags: []
+      - name: c_boolean
+        type: boolean
+        nullable: true
+        metadata:
+          description: Boolean value within the nested struct column
+          mappings: []
+          tags: []
+      - name: c_double
+        type: double
+        nullable: true
+        metadata:
+          description: Double value within the nested struct column
+          mappings: []
+          tags: []
+      - name: c_string
+        type: string
+        nullable: true
+        metadata:
+          description: String value within the nested struct column
+          mappings: []
+          tags: []
+      - name: c_date
+        type: date
+        nullable: true
+        metadata:
+          description: Date value within the nested struct column 'c_struct'
+          mappings: []
+          tags: []
+      - name: c_timestamp
+        type: timestamp
+        nullable: true
+        metadata:
+          description: Timestamp value within the nested struct column 'c_struct'
+          mappings: []
+          tags: []
+      - name: c_array_int
+        type:
+          type: array
+          elementType: integer
+          containsNull: true
+        nullable: true
+        metadata:
+          description: Array of integer values within the nested struct column 'c_struct'
+          mappings: []
+          tags: []
+    nullable: true
+    metadata:
+      description: A nested structure containing multiple fields
+      mappings: []
+      tags: []

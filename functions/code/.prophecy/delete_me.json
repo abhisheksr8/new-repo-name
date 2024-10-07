@@ -1,0 +1,1 @@
+{"initCode":"separator=' '","code":"def delete_me(d1, d2):\n    return f\"{d1}{separator}{d2}\""}

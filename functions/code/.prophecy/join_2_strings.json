@@ -1,0 +1,1 @@
+{"initCode":"separator=' '","code":"def join_2_strings(d1, d2):\n    return f\"{d1}{separator}{d2}\""}

@@ -1,0 +1,100 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: c_tinyint
+    type: byte
+    nullable: true
+    metadata:
+      description: A small integer value representing a specific attribute.
+      mappings: []
+      tags: []
+  - name: c_smallint
+    type: short
+    nullable: true
+    metadata:
+      description: A small integer value representing a specific metric or identifier.
+      mappings: []
+      tags: []
+  - name: c_int
+    type: integer
+    nullable: true
+    metadata:
+      description: An integer value representing a specific metric or identifier.
+      mappings: []
+      tags: []
+  - name: c_bigint
+    type: long
+    nullable: true
+    metadata:
+      description: A large integer value representing significant numerical data.
+      mappings: []
+      tags: []
+  - name: c_float
+    type: float
+    nullable: true
+    metadata:
+      description: A floating-point number representing a precise value.
+      mappings: []
+      tags: []
+  - name: c_double
+    type: double
+    nullable: true
+    metadata:
+      description: A double-precision value representing a numeric measurement.
+      mappings: []
+      tags: []
+  - name: c_string
+    type: string
+    nullable: true
+    metadata:
+      description: A text field for storing string data.
+      mappings: []
+      tags: []
+  - name: c_boolean
+    type: boolean
+    nullable: true
+    metadata:
+      description: Indicates a true or false condition related to the data
+      mappings: []
+      tags: []
+  - name: c_array
+    type:
+      type: array
+      elementType: string
+      containsNull: true
+    nullable: true
+    metadata:
+      description: A collection of string values associated with the record
+      mappings: []
+      tags: []
+  - name: c_struct
+    type:
+      type: struct
+      fields:
+      - name: city
+        type: string
+        nullable: true
+        metadata:
+          description: City associated with the structured data
+          mappings: []
+          tags: []
+      - name: state
+        type: string
+        nullable: true
+        metadata:
+          description: The state associated with the structured address data.
+          mappings: []
+          tags: []
+      - name: pin
+        type: long
+        nullable: true
+        metadata:
+          description: The postal code associated with the address in the structure
+          mappings: []
+          tags: []
+    nullable: true
+    metadata:
+      description: Structured data containing city, state, and pin code information.
+      mappings: []
+      tags: []

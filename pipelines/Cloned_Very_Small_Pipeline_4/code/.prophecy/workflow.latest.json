@@ -1,0 +1,3196 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : {
+      "businessRules" : {
+        "rules" : [ ],
+        "sharedRules" : [ ]
+      },
+      "columnExpressions" : {
+        "expressions" : [ ],
+        "sharedExpressions" : [ ]
+      }
+    },
+    "codeGenConfiguration" : {
+      "editableConfig" : false,
+      "plibVersion" : {
+        "mavenVersion" : "8.3.0-SNAPSHOT"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/Cloned_Very_Small_Pipeline_4",
+    "sourceSuggestions" : [ ],
+    "pipelineSettingsInfo" : {
+      "hasApplication" : false
+    },
+    "language" : "scala",
+    "fabricId" : "33",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "scala",
+      "udfs" : [ ],
+      "functionPackageName" : "abhishekse2etestsprophecoteam.scala_project.functions",
+      "sharedFunctionPackageNames" : [ "io.prophecy.scalagems.functions", "io.prophecy.warehousegems.functions", "io.prophecy.scalamaskinggems.functions", "io.prophecy.abiscalagems.functions" ]
+    },
+    "udafs" : {
+      "language" : "scala",
+      "code" : "package udfs\n\nimport org.apache.spark.sql.expressions._\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql._\n\n/**\n  * Here you can define your custom aggregate functions.\n  *\n  * Make sure to register your `udafs` in the register_udafs function below.\n  *\n  * Example:\n  *\n  * object GeometricMean extends UserDefinedAggregateFunction {\n  *   // This is the input fields for your aggregate function.\n  *   override def inputSchema: org.apache.spark.sql.types.StructType =\n  *     StructType(StructField(\"value\", DoubleType) :: Nil)\n  *\n  *   // This is the internal fields you keep for computing your aggregate.\n  *   override def bufferSchema: StructType = StructType(\n  *     StructField(\"count\", LongType) ::\n  *     StructField(\"product\", DoubleType) :: Nil\n  *   )\n  *\n  *   // This is the output type of your aggregatation function.\n  *   override def dataType: DataType = DoubleType\n  *\n  *   override def deterministic: Boolean = true\n  *\n  *   // This is the initial value for your buffer schema.\n  *   override def initialize(buffer: MutableAggregationBuffer): Unit = {\n  *     buffer(0) = 0L\n  *     buffer(1) = 1.0\n  *   }\n  *\n  *   // This is how to update your buffer schema given an input.\n  *   override def update(buffer: MutableAggregationBuffer, input: Row): Unit = {\n  *     buffer(0) = buffer.getAs[Long](0) + 1\n  *     buffer(1) = buffer.getAs[Double](1) * input.getAs[Double](0)\n  *   }\n  *\n  *   // This is how to merge two objects with the bufferSchema type.\n  *   override def merge(buffer1: MutableAggregationBuffer, buffer2: Row): Unit = {\n  *     buffer1(0) = buffer1.getAs[Long](0) + buffer2.getAs[Long](0)\n  *     buffer1(1) = buffer1.getAs[Double](1) * buffer2.getAs[Double](1)\n  *   }\n  *\n  *   // This is where you output the final value, given the final value of your bufferSchema.\n  *   override def evaluate(buffer: Row): Any = {\n  *     math.pow(buffer.getDouble(1), 1.toDouble / buffer.getLong(0))\n  *   }\n  * }\n  *\n  */\n\n\nobject UDAFs {\n  /**\n    * Registers UDAFs with Spark SQL\n    */\n  def registerUDAFs(spark: SparkSession): Unit = {\n    /**\n      * Example:\n      *\n      * spark.udf.register(\"gm\", GeometricMean)\n      *\n      */\n\n\n  }\n}\n"
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "c_test",
+          "kind" : {
+            "type" : "string",
+            "value" : "this is something new son"
+          },
+          "optional" : true,
+          "comment" : "test_str this is randome description for this field @!#$!@$#$^$%*^(*(_()+&#$%%#~!@",
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "c_array",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "string",
+              "value" : null
+            },
+            "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+          },
+          "optional" : true,
+          "comment" : "array desc",
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "c_record3",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "c_val3",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "crr",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : "asdasdasd"
+                  },
+                  "optional" : true,
+                  "comment" : "crr desc",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : true,
+              "comment" : "c value record",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            } ]
+          },
+          "optional" : true,
+          "comment" : "record ddesc",
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "bool",
+          "kind" : {
+            "type" : "boolean",
+            "value" : true
+          },
+          "optional" : false,
+          "comment" : "bool desc",
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "double",
+          "kind" : {
+            "type" : "double",
+            "value" : 234324
+          },
+          "optional" : false,
+          "comment" : "double desc",
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "record_array",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "array",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "value" : [ "23" ]
+              },
+              "optional" : false,
+              "comment" : "wer",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            } ]
+          },
+          "optional" : false,
+          "comment" : "sewr",
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "array_record",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "werw",
+                "kind" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "optional" : false,
+                "isWorkflowNodeConfiguration" : false,
+                "isReferenced" : false
+              }, {
+                "name" : "ewr",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "value" : null
+                },
+                "optional" : false,
+                "isWorkflowNodeConfiguration" : false,
+                "isReferenced" : false
+              } ]
+            },
+            "value" : [ {
+              "werw" : "332",
+              "ewr" : [ "12", "w" ]
+            } ]
+          },
+          "optional" : false,
+          "comment" : "sdf",
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "reformatted_columns_1",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "c_test",
+              "kind" : {
+                "type" : "string",
+                "value" : "this is something new son"
+              },
+              "optional" : true,
+              "comment" : "test_str",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "c_array",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+              },
+              "optional" : false,
+              "comment" : "array desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "c_record3",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "c_val3",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "crr",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : "asdasdasd"
+                      },
+                      "optional" : false,
+                      "comment" : "crr desc",
+                      "isWorkflowNodeConfiguration" : false,
+                      "isReferenced" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "c value record",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "comment" : "record ddesc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "bool",
+              "kind" : {
+                "type" : "boolean",
+                "value" : true
+              },
+              "optional" : false,
+              "comment" : "bool desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "double",
+              "kind" : {
+                "type" : "double",
+                "value" : 234324
+              },
+              "optional" : false,
+              "comment" : "double desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "record_array",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "array",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "value" : [ "23" ]
+                  },
+                  "optional" : false,
+                  "comment" : "wer",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "comment" : "sewr",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "array_record",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "werw",
+                    "kind" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false,
+                    "isReferenced" : false
+                  }, {
+                    "name" : "ewr",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false,
+                    "isReferenced" : false
+                  } ]
+                },
+                "value" : [ {
+                  "werw" : "332",
+                  "ewr" : [ "12", "w" ]
+                } ]
+              },
+              "optional" : false,
+              "comment" : "sdf",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true,
+          "isReferenced" : false
+        }, {
+          "name" : "subgraph_reformat_5",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "c_test",
+              "kind" : {
+                "type" : "string",
+                "value" : "this is something new son"
+              },
+              "optional" : true,
+              "comment" : "test_str",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "c_array",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+              },
+              "optional" : false,
+              "comment" : "array desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "c_record3",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "c_val3",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "crr",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : "asdasdasd"
+                      },
+                      "optional" : false,
+                      "comment" : "crr desc",
+                      "isWorkflowNodeConfiguration" : false,
+                      "isReferenced" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "c value record",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "comment" : "record ddesc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "bool",
+              "kind" : {
+                "type" : "boolean",
+                "value" : true
+              },
+              "optional" : false,
+              "comment" : "bool desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "double",
+              "kind" : {
+                "type" : "double",
+                "value" : 234324
+              },
+              "optional" : false,
+              "comment" : "double desc",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "record_array",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "array",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "value" : [ "23" ]
+                  },
+                  "optional" : false,
+                  "comment" : "wer",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "comment" : "sewr",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "array_record",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "werw",
+                    "kind" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false,
+                    "isReferenced" : false
+                  }, {
+                    "name" : "ewr",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false,
+                    "isReferenced" : false
+                  } ]
+                },
+                "value" : [ {
+                  "werw" : "332",
+                  "ewr" : [ "12", "w" ]
+                } ]
+              },
+              "optional" : false,
+              "comment" : "sdf",
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "Subgraph_2",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "c_test",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : "this is something new son"
+                  },
+                  "optional" : true,
+                  "comment" : "test_str",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "c_array",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
+                  },
+                  "optional" : false,
+                  "comment" : "array desc",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "c_record3",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "c_val3",
+                      "kind" : {
+                        "type" : "record",
+                        "fields" : [ {
+                          "name" : "crr",
+                          "kind" : {
+                            "type" : "string",
+                            "value" : "asdasdasd"
+                          },
+                          "optional" : false,
+                          "comment" : "crr desc",
+                          "isWorkflowNodeConfiguration" : false,
+                          "isReferenced" : false
+                        } ]
+                      },
+                      "optional" : false,
+                      "comment" : "c value record",
+                      "isWorkflowNodeConfiguration" : false,
+                      "isReferenced" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "record ddesc",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "bool",
+                  "kind" : {
+                    "type" : "boolean",
+                    "value" : true
+                  },
+                  "optional" : false,
+                  "comment" : "bool desc",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "double",
+                  "kind" : {
+                    "type" : "double",
+                    "value" : 234324
+                  },
+                  "optional" : false,
+                  "comment" : "double desc",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "record_array",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "array",
+                      "kind" : {
+                        "type" : "array",
+                        "elementType" : {
+                          "type" : "string",
+                          "value" : null
+                        },
+                        "value" : [ "23" ]
+                      },
+                      "optional" : false,
+                      "comment" : "wer",
+                      "isWorkflowNodeConfiguration" : false,
+                      "isReferenced" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "sewr",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                }, {
+                  "name" : "array_record",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "werw",
+                        "kind" : {
+                          "type" : "string",
+                          "value" : null
+                        },
+                        "optional" : false,
+                        "isWorkflowNodeConfiguration" : false,
+                        "isReferenced" : false
+                      }, {
+                        "name" : "ewr",
+                        "kind" : {
+                          "type" : "array",
+                          "elementType" : {
+                            "type" : "string",
+                            "value" : null
+                          },
+                          "value" : null
+                        },
+                        "optional" : false,
+                        "isWorkflowNodeConfiguration" : false,
+                        "isReferenced" : false
+                      } ]
+                    },
+                    "value" : [ {
+                      "werw" : "332",
+                      "ewr" : [ "12", "w" ]
+                    } ]
+                  },
+                  "optional" : false,
+                  "comment" : "sdf",
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : true,
+              "isReferenced" : false
+            } ]
+          },
+          "optional" : false,
+          "comment" : "main hoon subgraph 1",
+          "isWorkflowNodeConfiguration" : true,
+          "isReferenced" : false
+        }, {
+          "name" : "c_int",
+          "kind" : {
+            "type" : "int",
+            "value" : 1
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "c_string",
+          "kind" : {
+            "type" : "string",
+            "value" : "SCALA_BASIC - DEFFAULT"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "c_spark_expression",
+          "kind" : {
+            "type" : "spark_expression",
+            "value" : "concat('a', 'b')"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ {
+      "name" : "spark_config1",
+      "value" : "spark_config_value_1"
+    }, {
+      "name" : "spark_config2",
+      "value" : "spark_config_value_2"
+    } ],
+    "hadoopConf" : [ {
+      "name" : "hadoop_config1",
+      "value" : "hadoop_config_value1"
+    }, {
+      "name" : "hadoop_config2",
+      "value" : "hadoop_config_value2"
+    } ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "1",
+      "projectName" : "ProphecySparkBasicsScala",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "2",
+      "projectName" : "ProphecyWarehouseScala",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "3",
+      "projectName" : "ProphecyMaskingScala",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "8",
+      "projectName" : "ProphecySparkAbinitioScala",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Full",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 85
+    },
+    "topLevelPackage" : "io.prophecy.pipelines.very_small_pipeline",
+    "configTopLevelPackage" : "very_small_pipeline",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "ihjMhkSK3NOcvwo6t5jj4",
+    "source" : "o8K-lNobc6Z8Asi3dRegs$$Buw8lxPhFtSUcFZhGxXbx",
+    "sourcePort" : "Yui765QKx0wOKHaOnjtzk$$Q04y-nxgyv0ZfORhocEUn",
+    "target" : "Ab1UUib644jbaKEWI1-kq$$OQ-A2zCgea81HNpeYaocD",
+    "targetPort" : "pLUINAdJDxK94-8JnpbJW$$Q7KuyDPZEeF11ErksnG1y"
+  }, {
+    "id" : "VfOv-PSkRPu6HbpEkdiCm",
+    "source" : "Ab1UUib644jbaKEWI1-kq$$OQ-A2zCgea81HNpeYaocD",
+    "sourcePort" : "wzgWNknaYEdI8uQwUxh9y$$-V4KLMRzAp0WuqSQQeD-2",
+    "target" : "9SxukrkbLjB9767nnjjyc$$HKrQPtYnAcfBjk1YLp12B",
+    "targetPort" : "E_E0hDhiQp4ILXF74PEpe$$Rkp-adYCwZ273LLSifo95"
+  }, {
+    "id" : "Mb5P64HGDxRePr-ljV8Rw",
+    "source" : "o8K-lNobc6Z8Asi3dRegs$$Buw8lxPhFtSUcFZhGxXbx",
+    "sourcePort" : "Yui765QKx0wOKHaOnjtzk$$Q04y-nxgyv0ZfORhocEUn",
+    "target" : "TRj3KDiCJEKPMmBVhR_C0$$_BsN4cTI7Ypi1wdggNBEe",
+    "targetPort" : "_B7wpw-aQifZqwphe7fFe$$3mWKZv8_N8Gn97Yq18UNZ"
+  }, {
+    "id" : "XEvN7N-r1WmQkH3Zwqwxd$$BrX44auaLzm-hek3kYYHY",
+    "source" : "9SxukrkbLjB9767nnjjyc$$HKrQPtYnAcfBjk1YLp12B",
+    "sourcePort" : "q2OHFdKSlaApfiB-p2kod$$gjcVI8oVJu6r8jvarb7gm",
+    "target" : "Xd3Wt7qKtiH4SPH5A-eGR$$oZwwQphp8b9ewzTGxxg9_",
+    "targetPort" : "8IQtl3rLkmck3qih30ANw$$mU9MP92MSIDk_6UUk377w"
+  }, {
+    "id" : "KTe_oirIBkFBo2GLHaK-q",
+    "source" : "o8K-lNobc6Z8Asi3dRegs$$Buw8lxPhFtSUcFZhGxXbx",
+    "sourcePort" : "Yui765QKx0wOKHaOnjtzk$$Q04y-nxgyv0ZfORhocEUn",
+    "target" : "QVkuAsxoq5NQ0MUxMEpMp$$-059MNIlT6AakSkqptOSR",
+    "targetPort" : "Oz-0O47SPcH7_K_c343Zg$$YJk427S-olcvs4fU8VfGe"
+  }, {
+    "id" : "QUDezp9rBD0nygMZTFqDX$$bMMWJp8_UsRYdTmGMHlEm",
+    "source" : "2CsHylb0Si7Iu1BwtU25H$$3c8Yrcik6DteZZzAs7Ogp",
+    "sourcePort" : "40EaQ49eizOI6Q0sgDpV2$$tNarnJReknpOLuhqQoArm",
+    "target" : "IEoG6y2_DW265J-jDe97A$$VDS07zkFAsSXUTsHmNPCA",
+    "targetPort" : "3Pa-NtCrjFEzkjQ4qF-f2$$wEp9fWC3ibe-aFdwl1w7J"
+  }, {
+    "id" : "WJOc4ArhOHkaGCE4Cz079",
+    "source" : "o8K-lNobc6Z8Asi3dRegs$$Buw8lxPhFtSUcFZhGxXbx",
+    "sourcePort" : "Yui765QKx0wOKHaOnjtzk$$Q04y-nxgyv0ZfORhocEUn",
+    "target" : "hxT8l69zffXuREzW1_qxS$$WeWd0H45ReziLQFnxuqiw",
+    "targetPort" : "Cv1_t3eaAIBskSrSekAYf$$4SjMQa1OTtIVJCPF5QJpi"
+  }, {
+    "id" : "pO8Q2WZZk9PnwwLntfENY",
+    "source" : "TRj3KDiCJEKPMmBVhR_C0$$_BsN4cTI7Ypi1wdggNBEe",
+    "sourcePort" : "xvy9wpqtF3KVFUrsH_nzr$$MA6qjNQ1c278G2qO7tpVM",
+    "target" : "wuThqUc2qpf_FmJCMTj2e$$vhP6lu8CS3r_W42eJUyZ1",
+    "targetPort" : "CdcPsGlPdedd2W18vygiV$$JtFv_c0Ip79tf9KULlFcu"
+  } ],
+  "processes" : {
+    "Xd3Wt7qKtiH4SPH5A-eGR$$oZwwQphp8b9ewzTGxxg9_" : {
+      "id" : "Xd3Wt7qKtiH4SPH5A-eGR$$oZwwQphp8b9ewzTGxxg9_",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_11",
+        "slug" : "Reformat_11",
+        "x" : 800,
+        "y" : 180,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "8IQtl3rLkmck3qih30ANw$$mU9MP92MSIDk_6UUk377w",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Short string value that may represent a small identifier or code.",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Integer value represented as a string; This column captures numeric data that is intended to be treated as an integer.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string representation of a long integer value, which may include special characters.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Decimal value representing a precise numeric measurement, allowing for significant digits and decimal places.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A floating-point number representing a specific measurement or value, which may include decimal points.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Indicates a true or false condition; Represents a binary state for the data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A double precision floating-point value that may represent a measurement or calculation result.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string field that may contain special characters and is used for storing miscellaneous text data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date value represented in YYYY-MM-DD format, indicating a specific date.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Timestamp indicating the exact date and time of an event, formatted in ISO 8601 standard.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_lookup_1",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_contains_starts_ends",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "BrNFqH0kpdDq56WRlmzeU$$4SWO5koqKXjR7QpYwUKZ5",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "8IQtl3rLkmck3qih30ANw$$mU9MP92MSIDk_6UUk377w##c   short  --", "8IQtl3rLkmck3qih30ANw$$mU9MP92MSIDk_6UUk377w##c-int-column type", "8IQtl3rLkmck3qih30ANw$$mU9MP92MSIDk_6UUk377w##c--boolean" ],
+        "expressions" : [ {
+          "target" : "c   short  --",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c   short  --`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c-int-column type",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c-int-column type`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c--boolean",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c--boolean`"
+          },
+          "description" : ""
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/QDtqmciq_team_2/QDtqmciq_project_1.git&subPath=&tag=0.2.5.5.dev8&projectSubscriptionProjectId=1&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsScala"
+      }
+    },
+    "9SxukrkbLjB9767nnjjyc$$HKrQPtYnAcfBjk1YLp12B" : {
+      "id" : "9SxukrkbLjB9767nnjjyc$$HKrQPtYnAcfBjk1YLp12B",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "reformat_columns",
+        "slug" : "reformat_columns",
+        "x" : 540,
+        "y" : 220,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "E_E0hDhiQp4ILXF74PEpe$$Rkp-adYCwZ273LLSifo95",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Short string value that may represent a small identifier or code.",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Integer value represented as a string; This column captures numeric data that is intended to be treated as an integer.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string representation of a long integer value, which may include special characters.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Decimal value representing a precise numeric measurement, allowing for significant digits and decimal places.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A floating-point number representing a specific measurement or value, which may include decimal points.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Indicates a true or false condition; Represents a binary state for the data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A double precision floating-point value that may represent a measurement or calculation result.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string field that may contain special characters and is used for storing miscellaneous text data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date value represented in YYYY-MM-DD format, indicating a specific date.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Timestamp indicating the exact date and time of an event, formatted in ISO 8601 standard.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_test_lookup_in_sg",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "q2OHFdKSlaApfiB-p2kod$$gjcVI8oVJu6r8jvarb7gm",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "E_E0hDhiQp4ILXF74PEpe$$Rkp-adYCwZ273LLSifo95##c   short  --", "E_E0hDhiQp4ILXF74PEpe$$Rkp-adYCwZ273LLSifo95##c-int-column type", "E_E0hDhiQp4ILXF74PEpe$$Rkp-adYCwZ273LLSifo95##-- c-long", "E_E0hDhiQp4ILXF74PEpe$$Rkp-adYCwZ273LLSifo95##c-decimal", "E_E0hDhiQp4ILXF74PEpe$$Rkp-adYCwZ273LLSifo95##c  float", "E_E0hDhiQp4ILXF74PEpe$$Rkp-adYCwZ273LLSifo95##c--boolean", "E_E0hDhiQp4ILXF74PEpe$$Rkp-adYCwZ273LLSifo95##c- - -double", "E_E0hDhiQp4ILXF74PEpe$$Rkp-adYCwZ273LLSifo95##c___-- string", "E_E0hDhiQp4ILXF74PEpe$$Rkp-adYCwZ273LLSifo95##c  date", "E_E0hDhiQp4ILXF74PEpe$$Rkp-adYCwZ273LLSifo95##c_timestamp" ],
+        "expressions" : [ {
+          "target" : "c   short  --",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c   short  --`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c-int-column type",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c-int-column type`"
+          },
+          "description" : ""
+        }, {
+          "target" : "-- c-long",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`-- c-long`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c-decimal",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c-decimal`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c  float",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c  float`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c--boolean",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c--boolean`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c- - -double",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c- - -double`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c___-- string",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c___-- string`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c  date",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c  date`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_timestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_timestamp"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_lookup_1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "concat('a', 'b')"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_contains_starts_ends",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "((endsWith(`c___-- string`, `c  float`) OR startsWith(`c___-- string`, `c  float`)) OR contains(`c___-- string`, `c  float`))"
+          },
+          "description" : ""
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/QDtqmciq_team_2/QDtqmciq_project_1.git&subPath=&tag=0.2.5.5.dev8&projectSubscriptionProjectId=1&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsScala"
+      }
+    },
+    "QVkuAsxoq5NQ0MUxMEpMp$$-059MNIlT6AakSkqptOSR" : {
+      "id" : "QVkuAsxoq5NQ0MUxMEpMp$$-059MNIlT6AakSkqptOSR",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "DONOT_DELETE",
+        "slug" : "DONOT_DELETE",
+        "x" : 120,
+        "y" : 300,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Oz-0O47SPcH7_K_c343Zg$$YJk427S-olcvs4fU8VfGe",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Short string value that may represent a small identifier or code.",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Integer value represented as a string; This column captures numeric data that is intended to be treated as an integer.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string representation of a long integer value, which may include special characters.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Decimal value representing a precise numeric measurement, allowing for significant digits and decimal places.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A floating-point number representing a specific measurement or value, which may include decimal points.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Indicates a true or false condition; Represents a binary state for the data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A double precision floating-point value that may represent a measurement or calculation result.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string field that may contain special characters and is used for storing miscellaneous text data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date value represented in YYYY-MM-DD format, indicating a specific date.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Timestamp indicating the exact date and time of an event, formatted in ISO 8601 standard.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(20,10)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A decimal value with high precision, used for representing financial or measurement data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "GDf7WQpZhqZc_HPKUwIc1$$t_F8ZP7gTEFITFhhzi1N1",
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(20,10)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "script" : "print(\"------------\")\nprint(Config.c_int)\nprint(Config.c_string)\nprint(\"------------\")\nvar out0=in0",
+        "scriptMethodHeader" : "def apply(spark: SparkSession, in0: DataFrame): DataFrame = {",
+        "scriptMethodFooter" : "    out0\n}"
+      }
+    },
+    "hxT8l69zffXuREzW1_qxS$$WeWd0H45ReziLQFnxuqiw" : {
+      "id" : "hxT8l69zffXuREzW1_qxS$$WeWd0H45ReziLQFnxuqiw",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "UNIT_TESTS_REFORMAT_GEM",
+        "slug" : "UNIT_TESTS_REFORMAT_GEM",
+        "x" : -120,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Reformats and standardizes column names in a dataset for improved clarity and consistency.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Cv1_t3eaAIBskSrSekAYf$$4SjMQa1OTtIVJCPF5QJpi",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Short string value that may represent a small identifier or code.",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Integer value represented as a string; This column captures numeric data that is intended to be treated as an integer.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string representation of a long integer value, which may include special characters.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Decimal value representing a precise numeric measurement, allowing for significant digits and decimal places.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A floating-point number representing a specific measurement or value, which may include decimal points.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Indicates a true or false condition; Represents a binary state for the data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A double precision floating-point value that may represent a measurement or calculation result.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string field that may contain special characters and is used for storing miscellaneous text data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date value represented in YYYY-MM-DD format, indicating a specific date.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Timestamp indicating the exact date and time of an event, formatted in ISO 8601 standard.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(20,10)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A decimal value with high precision, used for representing financial or measurement data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "rmK2EW187QKpmEf_ej8gv$$VvPoBSnSLaYQ3NChU5CkS",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "Cv1_t3eaAIBskSrSekAYf$$4SjMQa1OTtIVJCPF5QJpi##c   short  --", "Cv1_t3eaAIBskSrSekAYf$$4SjMQa1OTtIVJCPF5QJpi##c-int-column type", "Cv1_t3eaAIBskSrSekAYf$$4SjMQa1OTtIVJCPF5QJpi##-- c-long", "Cv1_t3eaAIBskSrSekAYf$$4SjMQa1OTtIVJCPF5QJpi##c-decimal", "Cv1_t3eaAIBskSrSekAYf$$4SjMQa1OTtIVJCPF5QJpi##c  float", "Cv1_t3eaAIBskSrSekAYf$$4SjMQa1OTtIVJCPF5QJpi##c--boolean", "Cv1_t3eaAIBskSrSekAYf$$4SjMQa1OTtIVJCPF5QJpi##c- - -double", "Cv1_t3eaAIBskSrSekAYf$$4SjMQa1OTtIVJCPF5QJpi##c___-- string", "Cv1_t3eaAIBskSrSekAYf$$4SjMQa1OTtIVJCPF5QJpi##c  date", "Cv1_t3eaAIBskSrSekAYf$$4SjMQa1OTtIVJCPF5QJpi##c_timestamp", "Cv1_t3eaAIBskSrSekAYf$$4SjMQa1OTtIVJCPF5QJpi##c_decimal" ],
+        "expressions" : [ {
+          "target" : "c   short  --",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c   short  --`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c-int-column type",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c-int-column type`"
+          },
+          "description" : ""
+        }, {
+          "target" : "-- c-long",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`-- c-long`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c-decimal",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c-decimal`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c  float",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c  float`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c--boolean",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c--boolean`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c- - -double",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c- - -double`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c___-- string",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c___-- string`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c  date",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c  date`"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_timestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_timestamp"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_decimal",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_decimal"
+          },
+          "description" : ""
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/QDtqmciq_team_2/QDtqmciq_project_1.git&subPath=&tag=0.2.5.5.dev8&projectSubscriptionProjectId=1&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsScala"
+      }
+    },
+    "wuThqUc2qpf_FmJCMTj2e$$vhP6lu8CS3r_W42eJUyZ1" : {
+      "id" : "wuThqUc2qpf_FmJCMTj2e$$vhP6lu8CS3r_W42eJUyZ1",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_7",
+        "slug" : "Reformat_7",
+        "x" : 460,
+        "y" : 0,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "CdcPsGlPdedd2W18vygiV$$JtFv_c0Ip79tf9KULlFcu",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Short string value that may represent a small identifier or code.",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Integer value represented as a string; This column captures numeric data that is intended to be treated as an integer.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string representation of a long integer value, which may include special characters.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Decimal value representing a precise numeric measurement, allowing for significant digits and decimal places.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A floating-point number representing a specific measurement or value, which may include decimal points.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Indicates a true or false condition; Represents a binary state for the data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A double precision floating-point value that may represent a measurement or calculation result.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string field that may contain special characters and is used for storing miscellaneous text data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date value represented in YYYY-MM-DD format, indicating a specific date.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Timestamp indicating the exact date and time of an event, formatted in ISO 8601 standard.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "H6Z_aAnftBpk4a-USAecW$$DfJIjJOqY8XnYd8OGH-ZP",
+          "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/QDtqmciq_team_2/QDtqmciq_project_1.git&subPath=&tag=0.2.5.5.dev8&projectSubscriptionProjectId=1&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsScala"
+      }
+    },
+    "Ab1UUib644jbaKEWI1-kq$$OQ-A2zCgea81HNpeYaocD" : {
+      "id" : "Ab1UUib644jbaKEWI1-kq$$OQ-A2zCgea81HNpeYaocD",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "reformatted_columns_1",
+        "slug" : "reformatted_columns_1",
+        "x" : 300,
+        "y" : 220,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pLUINAdJDxK94-8JnpbJW$$Q7KuyDPZEeF11ErksnG1y",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Short string value that may represent a small identifier or code.",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Integer value represented as a string; This column captures numeric data that is intended to be treated as an integer.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string representation of a long integer value, which may include special characters.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Decimal value representing a precise numeric measurement, allowing for significant digits and decimal places.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A floating-point number representing a specific measurement or value, which may include decimal points.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Indicates a true or false condition; Represents a binary state for the data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A double precision floating-point value that may represent a measurement or calculation result.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string field that may contain special characters and is used for storing miscellaneous text data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date value represented in YYYY-MM-DD format, indicating a specific date.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Timestamp indicating the exact date and time of an event, formatted in ISO 8601 standard.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(20,10)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A decimal value with high precision, used for representing financial or measurement data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "wzgWNknaYEdI8uQwUxh9y$$-V4KLMRzAp0WuqSQQeD-2",
+          "slug" : "out0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { },
+      "connections" : [ {
+        "id" : "EdKvHRKo_nLsExs6P1LqP",
+        "source" : "Ab1UUib644jbaKEWI1-kq$$OQ-A2zCgea81HNpeYaocD",
+        "sourcePort" : "pLUINAdJDxK94-8JnpbJW$$Q7KuyDPZEeF11ErksnG1y",
+        "target" : "ugLA-pAzjs7ixVrEDX8tw$$17WaSsv-LLH4IuKrn27rs",
+        "targetPort" : "7w_BTEEKNKj0EAqLRwuvh$$OII7LzcN1gwjV_6od515c"
+      }, {
+        "id" : "CblsuJWzU2xUuCvlO0h0-",
+        "source" : "ugLA-pAzjs7ixVrEDX8tw$$17WaSsv-LLH4IuKrn27rs",
+        "sourcePort" : "YruOL_Ib1eLyutfJsFwiq$$BzNg8UFjsr_zxjVAolssu",
+        "target" : "7ACUG7bZD2YiBumZwdTsp$$ezAx1x3FF88JwAwdt_I55",
+        "targetPort" : "2icu3t02EgqfZam4GJBzg$$D0OhYn5MdD1hpQdkvcCIc"
+      }, {
+        "id" : "2DN18CRNctHCRvXwVGgCO",
+        "source" : "7ACUG7bZD2YiBumZwdTsp$$ezAx1x3FF88JwAwdt_I55",
+        "sourcePort" : "i_26utt2Trm87J0Qlv1yw$$7f6wRA1Cm_oTip84aYggZ",
+        "target" : "Ab1UUib644jbaKEWI1-kq$$OQ-A2zCgea81HNpeYaocD",
+        "targetPort" : "wzgWNknaYEdI8uQwUxh9y$$-V4KLMRzAp0WuqSQQeD-2"
+      } ],
+      "processes" : {
+        "ugLA-pAzjs7ixVrEDX8tw$$17WaSsv-LLH4IuKrn27rs" : {
+          "id" : "ugLA-pAzjs7ixVrEDX8tw$$17WaSsv-LLH4IuKrn27rs",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_2",
+            "slug" : "Reformat_2",
+            "x" : -280,
+            "y" : -420,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "7w_BTEEKNKj0EAqLRwuvh$$OII7LzcN1gwjV_6od515c",
+              "slug" : "in",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c   short  --",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Short string value that may represent a small identifier or code.",
+                    "mappings" : [ ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "primary"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag1"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag2"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag3"
+                    }, {
+                      "type" : "user",
+                      "name" : "asdasdasd324234"
+                    } ]
+                  }
+                }, {
+                  "name" : "c-int-column type",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Integer value represented as a string; This column captures numeric data that is intended to be treated as an integer.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "-- c-long",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A string representation of a long integer value, which may include special characters.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c-decimal",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Decimal value representing a precise numeric measurement, allowing for significant digits and decimal places.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  float",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A floating-point number representing a specific measurement or value, which may include decimal points.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c--boolean",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Indicates a true or false condition; Represents a binary state for the data.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c- - -double",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A double precision floating-point value that may represent a measurement or calculation result.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c___-- string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A string field that may contain special characters and is used for storing miscellaneous text data.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  date",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Date value represented in YYYY-MM-DD format, indicating a specific date.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Timestamp indicating the exact date and time of an event, formatted in ISO 8601 standard.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "type" : "decimal(20,10)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A decimal value with high precision, used for representing financial or measurement data.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "YruOL_Ib1eLyutfJsFwiq$$BzNg8UFjsr_zxjVAolssu",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "columnsSelector" : [ "7w_BTEEKNKj0EAqLRwuvh$$OII7LzcN1gwjV_6od515c##c   short  --", "7w_BTEEKNKj0EAqLRwuvh$$OII7LzcN1gwjV_6od515c##c-int-column type", "7w_BTEEKNKj0EAqLRwuvh$$OII7LzcN1gwjV_6od515c##-- c-long", "7w_BTEEKNKj0EAqLRwuvh$$OII7LzcN1gwjV_6od515c##c-decimal", "7w_BTEEKNKj0EAqLRwuvh$$OII7LzcN1gwjV_6od515c##c  float", "7w_BTEEKNKj0EAqLRwuvh$$OII7LzcN1gwjV_6od515c##c--boolean", "7w_BTEEKNKj0EAqLRwuvh$$OII7LzcN1gwjV_6od515c##c- - -double", "7w_BTEEKNKj0EAqLRwuvh$$OII7LzcN1gwjV_6od515c##c___-- string", "7w_BTEEKNKj0EAqLRwuvh$$OII7LzcN1gwjV_6od515c##c  date", "7w_BTEEKNKj0EAqLRwuvh$$OII7LzcN1gwjV_6od515c##c_timestamp" ],
+            "expressions" : [ {
+              "target" : "c   short  --",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c   short  --`"
+              },
+              "description" : ""
+            }, {
+              "target" : "c-int-column type",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c-int-column type`"
+              },
+              "description" : ""
+            }, {
+              "target" : "-- c-long",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`-- c-long`"
+              },
+              "description" : ""
+            }, {
+              "target" : "c-decimal",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c-decimal`"
+              },
+              "description" : ""
+            }, {
+              "target" : "c  float",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c  float`"
+              },
+              "description" : ""
+            }, {
+              "target" : "c--boolean",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c--boolean`"
+              },
+              "description" : ""
+            }, {
+              "target" : "c- - -double",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c- - -double`"
+              },
+              "description" : ""
+            }, {
+              "target" : "c___-- string",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c___-- string`"
+              },
+              "description" : ""
+            }, {
+              "target" : "c  date",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c  date`"
+              },
+              "description" : ""
+            }, {
+              "target" : "c_timestamp",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "c_timestamp"
+              },
+              "description" : ""
+            }, {
+              "target" : "c_test_lookup_in_sg",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "concat(`c  float`, `c   short  --`)"
+              },
+              "description" : ""
+            } ]
+          },
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/QDtqmciq_team_2/QDtqmciq_project_1.git&subPath=&tag=0.2.5.5.dev8&projectSubscriptionProjectId=1&path=gems/Reformat",
+            "projectName" : "ProphecySparkBasicsScala"
+          }
+        },
+        "7ACUG7bZD2YiBumZwdTsp$$ezAx1x3FF88JwAwdt_I55" : {
+          "id" : "7ACUG7bZD2YiBumZwdTsp$$ezAx1x3FF88JwAwdt_I55",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_3",
+            "slug" : "Reformat_3",
+            "x" : 160,
+            "y" : -420,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "2icu3t02EgqfZam4GJBzg$$D0OhYn5MdD1hpQdkvcCIc",
+              "slug" : "in",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c   short  --",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Short string value that may represent a small identifier or code.",
+                    "mappings" : [ ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "primary"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag1"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag2"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag3"
+                    }, {
+                      "type" : "user",
+                      "name" : "asdasdasd324234"
+                    } ]
+                  }
+                }, {
+                  "name" : "c-int-column type",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Integer value represented as a string; This column captures numeric data that is intended to be treated as an integer.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "-- c-long",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A string representation of a long integer value, which may include special characters.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c-decimal",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Decimal value representing a precise numeric measurement, allowing for significant digits and decimal places.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  float",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A floating-point number representing a specific measurement or value, which may include decimal points.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c--boolean",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Indicates a true or false condition; Represents a binary state for the data.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c- - -double",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A double precision floating-point value that may represent a measurement or calculation result.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c___-- string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A string field that may contain special characters and is used for storing miscellaneous text data.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  date",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Date value represented in YYYY-MM-DD format, indicating a specific date.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Timestamp indicating the exact date and time of an event, formatted in ISO 8601 standard.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_test_lookup_in_sg",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "i_26utt2Trm87J0Qlv1yw$$7f6wRA1Cm_oTip84aYggZ",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "columnsSelector" : [ ],
+            "expressions" : [ ]
+          },
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/QDtqmciq_team_2/QDtqmciq_project_1.git&subPath=&tag=0.2.5.5.dev8&projectSubscriptionProjectId=1&path=gems/Reformat",
+            "projectName" : "ProphecySparkBasicsScala"
+          }
+        }
+      }
+    },
+    "IEoG6y2_DW265J-jDe97A$$VDS07zkFAsSXUTsHmNPCA" : {
+      "id" : "IEoG6y2_DW265J-jDe97A$$VDS07zkFAsSXUTsHmNPCA",
+      "component" : "Lookup",
+      "metadata" : {
+        "label" : "Lookup_1",
+        "slug" : "Lookup_1",
+        "x" : 160,
+        "y" : -120,
+        "phase" : -2,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "3Pa-NtCrjFEzkjQ4qF-f2$$wEp9fWC3ibe-aFdwl1w7J",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for each customer in the dataset.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of the customer.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The surname of the customer.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Contact number of the customer; Format is a standard phone number.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Email address of the customer; Used for communication and account-related notifications.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "ISO code representing the country of the customer.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the customer account was opened; Format is YYYY-MM-DD.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Flags indicating the status or special conditions of the customer's account; typically used for categorization.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "isRange" : false,
+        "processName" : "TestLookup",
+        "keyColumns" : [ "last_name", "customer_id" ],
+        "valueColumns" : [ "first_name" ]
+      }
+    },
+    "TRj3KDiCJEKPMmBVhR_C0$$_BsN4cTI7Ypi1wdggNBEe" : {
+      "id" : "TRj3KDiCJEKPMmBVhR_C0$$_BsN4cTI7Ypi1wdggNBEe",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "subgraph_reformat_5",
+        "slug" : "subgraph_reformat_5",
+        "x" : 100,
+        "y" : 60,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "_B7wpw-aQifZqwphe7fFe$$3mWKZv8_N8Gn97Yq18UNZ",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Short string value that may represent a small identifier or code.",
+                "mappings" : [ ],
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                }, {
+                  "type" : "user",
+                  "name" : "tag1"
+                }, {
+                  "type" : "user",
+                  "name" : "tag2"
+                }, {
+                  "type" : "user",
+                  "name" : "tag3"
+                }, {
+                  "type" : "user",
+                  "name" : "asdasdasd324234"
+                } ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Integer value represented as a string; This column captures numeric data that is intended to be treated as an integer.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string representation of a long integer value, which may include special characters.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Decimal value representing a precise numeric measurement, allowing for significant digits and decimal places.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A floating-point number representing a specific measurement or value, which may include decimal points.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Indicates a true or false condition; Represents a binary state for the data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A double precision floating-point value that may represent a measurement or calculation result.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A string field that may contain special characters and is used for storing miscellaneous text data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date value represented in YYYY-MM-DD format, indicating a specific date.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Timestamp indicating the exact date and time of an event, formatted in ISO 8601 standard.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(20,10)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A decimal value with high precision, used for representing financial or measurement data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "xvy9wpqtF3KVFUrsH_nzr$$MA6qjNQ1c278G2qO7tpVM",
+          "slug" : "out0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { },
+      "connections" : [ {
+        "id" : "14Bq_6GusgltS5lhTMfVv",
+        "source" : "TRj3KDiCJEKPMmBVhR_C0$$_BsN4cTI7Ypi1wdggNBEe",
+        "sourcePort" : "_B7wpw-aQifZqwphe7fFe$$3mWKZv8_N8Gn97Yq18UNZ",
+        "target" : "Dez0MUPeq-PCMUuLdT8Wk$$8tWg6Lvea33_AOv4PoHFU",
+        "targetPort" : "pGk6ikSlxH6z8HQ9fCUJZ$$xhrWfe46Pb3VvKCPO4AVy"
+      }, {
+        "id" : "lfo9TCKon9QCR5W4hPoCq",
+        "source" : "Dez0MUPeq-PCMUuLdT8Wk$$8tWg6Lvea33_AOv4PoHFU",
+        "sourcePort" : "adchPgGZ8yXOO4jqgwlj1$$b3bK-g-BddS6NeohxH-O8",
+        "target" : "TRj3KDiCJEKPMmBVhR_C0$$_BsN4cTI7Ypi1wdggNBEe",
+        "targetPort" : "xvy9wpqtF3KVFUrsH_nzr$$MA6qjNQ1c278G2qO7tpVM"
+      } ],
+      "processes" : {
+        "Dez0MUPeq-PCMUuLdT8Wk$$8tWg6Lvea33_AOv4PoHFU" : {
+          "id" : "Dez0MUPeq-PCMUuLdT8Wk$$8tWg6Lvea33_AOv4PoHFU",
+          "component" : "Subgraph",
+          "metadata" : {
+            "label" : "Subgraph_2",
+            "slug" : "Subgraph_2",
+            "x" : -400,
+            "y" : -660,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "pGk6ikSlxH6z8HQ9fCUJZ$$xhrWfe46Pb3VvKCPO4AVy",
+              "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c   short  --",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Short string value that may represent a small identifier or code.",
+                    "mappings" : [ ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "primary"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag1"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag2"
+                    }, {
+                      "type" : "user",
+                      "name" : "tag3"
+                    }, {
+                      "type" : "user",
+                      "name" : "asdasdasd324234"
+                    } ]
+                  }
+                }, {
+                  "name" : "c-int-column type",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Integer value represented as a string; This column captures numeric data that is intended to be treated as an integer.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "-- c-long",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A string representation of a long integer value, which may include special characters.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c-decimal",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Decimal value representing a precise numeric measurement, allowing for significant digits and decimal places.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  float",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A floating-point number representing a specific measurement or value, which may include decimal points.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c--boolean",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Indicates a true or false condition; Represents a binary state for the data.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c- - -double",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A double precision floating-point value that may represent a measurement or calculation result.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c___-- string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A string field that may contain special characters and is used for storing miscellaneous text data.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c  date",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Date value represented in YYYY-MM-DD format, indicating a specific date.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Timestamp indicating the exact date and time of an event, formatted in ISO 8601 standard.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "type" : "decimal(20,10)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "A decimal value with high precision, used for representing financial or measurement data.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "adchPgGZ8yXOO4jqgwlj1$$b3bK-g-BddS6NeohxH-O8",
+              "slug" : "out0"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : { },
+          "connections" : [ {
+            "id" : "gg0L-GWevTGyXwOisM8hi",
+            "source" : "Dez0MUPeq-PCMUuLdT8Wk$$8tWg6Lvea33_AOv4PoHFU",
+            "sourcePort" : "pGk6ikSlxH6z8HQ9fCUJZ$$xhrWfe46Pb3VvKCPO4AVy",
+            "target" : "hbK2V0KBaU7e2z4vsXez1$$x27yrC0gxxjcsyGSjsfip",
+            "targetPort" : "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h"
+          }, {
+            "id" : "J1jXBFeX10Dv4Ce7axFXe",
+            "source" : "hbK2V0KBaU7e2z4vsXez1$$x27yrC0gxxjcsyGSjsfip",
+            "sourcePort" : "yYGWBCbdFpmi26Cp11ufi$$GVWd4_sYP-EQUi5m-dVFU",
+            "target" : "Dez0MUPeq-PCMUuLdT8Wk$$8tWg6Lvea33_AOv4PoHFU",
+            "targetPort" : "adchPgGZ8yXOO4jqgwlj1$$b3bK-g-BddS6NeohxH-O8"
+          } ],
+          "processes" : {
+            "hbK2V0KBaU7e2z4vsXez1$$x27yrC0gxxjcsyGSjsfip" : {
+              "id" : "hbK2V0KBaU7e2z4vsXez1$$x27yrC0gxxjcsyGSjsfip",
+              "component" : "Reformat",
+              "metadata" : {
+                "label" : "Reformat_5",
+                "slug" : "Reformat_5",
+                "x" : -500,
+                "y" : 200,
+                "phase" : 0,
+                "cache" : false,
+                "detailedStats" : false,
+                "isImported" : false
+              },
+              "ports" : {
+                "inputs" : [ {
+                  "id" : "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h",
+                  "slug" : "in",
+                  "schema" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "c   short  --",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "Short string value that may represent a small identifier or code.",
+                        "mappings" : [ ],
+                        "tags" : [ {
+                          "type" : "user",
+                          "name" : "primary"
+                        }, {
+                          "type" : "user",
+                          "name" : "tag1"
+                        }, {
+                          "type" : "user",
+                          "name" : "tag2"
+                        }, {
+                          "type" : "user",
+                          "name" : "tag3"
+                        }, {
+                          "type" : "user",
+                          "name" : "asdasdasd324234"
+                        } ]
+                      }
+                    }, {
+                      "name" : "c-int-column type",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "Integer value represented as a string; This column captures numeric data that is intended to be treated as an integer.",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "-- c-long",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "A string representation of a long integer value, which may include special characters.",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c-decimal",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "Decimal value representing a precise numeric measurement, allowing for significant digits and decimal places.",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c  float",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "A floating-point number representing a specific measurement or value, which may include decimal points.",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c--boolean",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "Indicates a true or false condition; Represents a binary state for the data.",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c- - -double",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "A double precision floating-point value that may represent a measurement or calculation result.",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c___-- string",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "A string field that may contain special characters and is used for storing miscellaneous text data.",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c  date",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "Date value represented in YYYY-MM-DD format, indicating a specific date.",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_timestamp",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "Timestamp indicating the exact date and time of an event, formatted in ISO 8601 standard.",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_decimal",
+                      "type" : "decimal(20,10)",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "A decimal value with high precision, used for representing financial or measurement data.",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "isStreaming" : false
+                } ],
+                "outputs" : [ {
+                  "id" : "yYGWBCbdFpmi26Cp11ufi$$GVWd4_sYP-EQUi5m-dVFU",
+                  "slug" : "out"
+                } ],
+                "selectedInputFields" : [ ],
+                "isCustomOutputSchema" : false,
+                "autoUpdateOnRun" : false
+              },
+              "properties" : {
+                "columnsSelector" : [ "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c   short  --", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c-int-column type", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##-- c-long", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c-decimal", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c  float", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c--boolean", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c- - -double", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c___-- string", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c  date", "pYPgAEW9TgQU3jSlAm9F2$$74EJNcM3TMT4a70oCCw9h##c_timestamp" ],
+                "expressions" : [ {
+                  "target" : "c   short  --",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c   short  --`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c-int-column type",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c-int-column type`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "-- c-long",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`-- c-long`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c-decimal",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c-decimal`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c  float",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c  float`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c--boolean",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c--boolean`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c- - -double",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c- - -double`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c___-- string",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c___-- string`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c  date",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c  date`"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c_timestamp",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "c_timestamp"
+                  },
+                  "description" : ""
+                } ]
+              },
+              "componentInfo" : {
+                "gemId" : "gitUri=http://gitserver:3000/QDtqmciq_team_2/QDtqmciq_project_1.git&subPath=&tag=0.2.5.5.dev8&projectSubscriptionProjectId=1&path=gems/Reformat",
+                "projectName" : "ProphecySparkBasicsScala"
+              }
+            }
+          }
+        }
+      }
+    },
+    "o8K-lNobc6Z8Asi3dRegs$$Buw8lxPhFtSUcFZhGxXbx" : {
+      "id" : "o8K-lNobc6Z8Asi3dRegs$$Buw8lxPhFtSUcFZhGxXbx",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_csv_special_char",
+        "slug" : "src_csv_special_char",
+        "x" : -340,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Yui765QKx0wOKHaOnjtzk$$Q04y-nxgyv0ZfORhocEUn",
+          "slug" : "out",
+          "dataExplorerProps" : {
+            "filter" : {
+              "type" : "Composite",
+              "op" : {
+                "type" : "AND"
+              },
+              "filters" : [ ]
+            },
+            "sorts" : [ {
+              "type" : "Simple",
+              "exp" : {
+                "type" : "Field",
+                "value" : "c   short  --"
+              },
+              "order" : {
+                "type" : "Asc"
+              }
+            } ]
+          }
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_csv_special_char_column_name"
+      }
+    },
+    "2CsHylb0Si7Iu1BwtU25H$$3c8Yrcik6DteZZzAs7Ogp" : {
+      "id" : "2CsHylb0Si7Iu1BwtU25H$$3c8Yrcik6DteZZzAs7Ogp",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_avro",
+        "slug" : "src_avro",
+        "x" : -340,
+        "y" : -60,
+        "phase" : -2,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "removalCondition" : "context.config.c_int > -100"
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "40EaQ49eizOI6Q0sgDpV2$$tNarnJReknpOLuhqQoArm",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_avro_CustsDatasetInput"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}
